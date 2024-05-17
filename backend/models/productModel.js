@@ -1,5 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
+
+
 const userSchema = new Schema({
     itemName: String,
     price: Number,
