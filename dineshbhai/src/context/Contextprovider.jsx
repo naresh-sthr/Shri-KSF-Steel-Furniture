@@ -1,7 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Usercontext from "./usecontext";
+import Products from "../component/Products";
+import axios from 'axios';
+
 function Contextprovider({ children }) {
   const [user, setuser] = useState(null);
+  const [products, setProducts] = useState([]);
+
+  useEffect(()=>{
+async function getproduct()
+{
+  const res = await axios.get("http://localhost:8888/api/products");
+ await setProducts(res.data)
+  console.log(products)
+
+}
+getproduct();
+  },[])
+
+  
   const photos = [
     {
       id: "1",
@@ -518,6 +535,7 @@ function Contextprovider({ children }) {
         user,
         setuser,
         photos,
+        products,
         setshow,
         show,
         img,

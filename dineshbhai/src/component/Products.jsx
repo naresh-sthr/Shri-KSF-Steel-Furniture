@@ -8,7 +8,8 @@ import { IoCall } from "react-icons/io5"; // Added IoCall for the call button ic
 import { Link } from 'react-router-dom';
 
 function Products() {
-  const { photos, formshow } = useContext(Usercontext);
+  const { photos, formshow ,products } = useContext(Usercontext);
+  console.log(products)
   const [showphoto, setphotos] = useState(false);
   function handleview() {
     setphotos(true);
@@ -37,30 +38,33 @@ function Products() {
         <p className='text-center'>Explore our range of durable and stylish steel furniture on our Products page</p>
 
         <div className='row col-sm-12 gap-4 d-flex align-items-center justify-content-center px-2 mb-4'>
-          {photos.slice(0 , showphoto ? photos.length : 10).map(photo =>
-            <div id="" className="col-sm-2 h-50 px-1" key={photo.id}>
+         {products && products.slice(0 , showphoto ? photos.length : 10).map(products =>
+             <div id="" className="col-sm-2 h-50 px-1" key={products._id}>
               <div style={{ height: "auto" }} className='mt-4' id="card1">
                 <p
                   style={{ color: 'chocolate' }}
                   className="d-flex align-items-center justify-content-center fw-bold fs-6"
                 >
-                  {photo.name}
+                  {products.itemName}
                 </p>
-                <Link to={`/productdetails/${photo.id}`} style={{ display: "block", width: "100%", height: "200px" }}>
+                {
+                console.log(products.itemName)
+                }
+                <Link to={`/productdetails/${products._id}`} style={{ display: "block", width: "100%", height: "200px" }}>
                   <img style={{ height: "100%", width: "100%", objectFit: "cover" }}
                     className="img-fluid"
-                    src={photo.src}
+                    src={products.imageUrl}
                     alt=""
                   />
                 </Link>
                 <div style={{fontSize:"13px" ,lineHeight:"15px" }} className="mt-2  " >
-                    <p className="flex-wrap" >{photo.p}</p>
+                    <p className="flex-wrap" >{products.desc}</p>
                     <div className="d-flex gap-1 " >
-                    <label style={{ color: '' }} className='mx-2 fw-medium fs-6' >{photo.price} </label>
+                    <label style={{ color: '' }} className='mx-2 fw-medium fs-6' >{products.price} </label>
                      <label style={{color:"#9b9b9ba1" ,    textDecorationLine: "line-through"}} >
-                      {photo.offers}
+                      nothin
                     </label>
-                    <label style={{color:"red"}} >{photo.lessoff}</label>
+                    <label style={{color:"red"}} >50%of</label>
                     </div>
                  
                   </div>
