@@ -428,6 +428,7 @@ p {
   animation-delay: 0s;
   animation-duration: 11s;
 }
+
 .circles1 {
   position: absolute;
   top: 0;
@@ -873,13 +874,16 @@ p.awesome_line {
   padding: 3px 7px;
   border-radius: 30px;
 }
-.card-image-container{
+
+.card-image-container {
   overflow: hidden;
 }
-.card-image-container img{
+
+.card-image-container img {
   transition: .2s ease-in-out;
 }
-.card-image-container:hover img{
+
+.card-image-container:hover img {
   scale: 1.1;
 }
 
@@ -888,65 +892,69 @@ p.awesome_line {
   border-radius: 100%;
   opacity: 0.7;
 }
-.buttonbackgraund
-{
+
+.buttonbackgraund {
   background-color: #d90700 !important;
 
 }
-.navbar-light .navbar-toggler-icon 
-{
 
-  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")  ;
+.navbar-light .navbar-toggler-icon {
+
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   /* background-image: none  ; */
 }
-.navbar-toggler:hover
-{
-  background-color:  rgb(255, 111, 0) !important;
+
+.navbar-toggler:hover {
+  background-color: rgb(255, 111, 0) !important;
 
 }
-.d-flexlistt
-{
-font-size: 12px;
+
+.d-flexlistt {
+  font-size: 12px;
 }
- .formbg
-{
+
+.formbg {
   background-image: url(https://i.pinimg.com/564x/df/6f/7f/df6f7f8edd8f0aceae2c1159be28e4cc.jpg) !important;
   background-size: cover !important;
   background-position: 100% !important;
   background-repeat: no-repeat;
 
 
-} 
+}
 
-.mainphoto
-{
+.mainphoto {
   height: 470px !important;
 
 }
-.photo-max-size
-{
+
+.photo-max-size {
   max-height: 600px;
 }
+
 .social-media-icons {
   display: flex;
   gap: 10px;
 }
 
 .social-media-icons a {
-  color: #333; /* Icon color */
+  color: #333;
+  /* Icon color */
   font-size: 15px;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .social-media-icons a:hover {
-  color: #007bff; /* Change color on hover */
+  color: #007bff;
+  /* Change color on hover */
 }
+
 /* Productdetails.css */
 @media (max-width: 767px) {
   .product-info {
     font-size: 0.9rem;
   }
+
   .product-price {
     font-size: 1.2rem;
   }
@@ -956,6 +964,7 @@ font-size: 12px;
   .product-info {
     font-size: 0.8rem;
   }
+
   .product-price {
     font-size: 1rem;
   }
@@ -991,11 +1000,11 @@ font-size: 12px;
   }
 }
 
-.listt
-{
+.listt {
   color: chocolate;
 }
-.contact-btn{
+
+.contact-btn {
   color: white;
   padding: 7px 12px;
 }

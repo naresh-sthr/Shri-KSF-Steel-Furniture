@@ -130,10 +130,10 @@ function Contact() {
                       />
                     </MDBCol>
                   </MDBRow>
-                  <MDBRow className="mb-3">
+                  <MDBRow className="mb-4">
                     <MDBCol md={6}>
                       {/* <label>Select a State:</label> */}
-                      <select className="form-select"
+                      <select className="form-select mb-4"
                         value={selectedState}
                         name="State"
                         onChange={handleStateChange}
