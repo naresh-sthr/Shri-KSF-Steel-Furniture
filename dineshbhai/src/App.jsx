@@ -259,8 +259,8 @@ function App() {
                   Rajasthan 307801{" "}
                 </p>
               </div>
-              <div className="col-xl-7 col-sm-8 col-md-11  ">
-                <MDBCard className="transparent-form ">
+              <div className="col-xl-7 col-sm-8 col-md-11 ">
+                <MDBCard className="transparent-form">
                   <MDBCardBody>
                     <form
                       action="https://formspree.io/f/mbjnoddw"
@@ -349,7 +349,7 @@ function App() {
                         </MDBCol>
                       </MDBRow>
                       <div className="mt-4" >
-                        <button className="btn btn-primary" size="lg">
+                        <button className="contact-btn" size="md">
                           Submit
                         </button>
                       </div>

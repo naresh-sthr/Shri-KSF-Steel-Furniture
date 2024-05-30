@@ -724,7 +724,7 @@ p.awesome_line {
 }
 
 .item:hover {
-  background: #f91942c5;
+  background: rgba(255, 111, 0, 0.753);
   box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.2);
   -webkit-transition: all .5s ease 0;
   transition: all .5s ease 0;
@@ -751,7 +751,7 @@ p.awesome_line {
 .item .icon {
   font-size: 40px;
   margin-bottom: 25px;
-  color: #f91942;
+  color: rgb(255, 111, 0) !important;
   width: 90px;
   height: 90px;
   line-height: 96px;
@@ -994,4 +994,8 @@ font-size: 12px;
 .listt
 {
   color: chocolate;
+}
+.contact-btn{
+  color: white;
+  padding: 7px 12px;
 }

@@ -4,10 +4,10 @@ const Calllogo = () => {
     <div className="image-container">
     <a href="tel:+9967745712">
       <img
-        src="public\R.png"
+        src="public\c.png"
         alt=""
         style={{
-          width: "50px",
+          width: "70px",
           position: "fixed",
           bottom: "20px",
           left: "15px",
