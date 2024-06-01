@@ -79,9 +79,8 @@ function App() {
   };
 
   const images = [
-    "https://img.freepik.com/free-photo/3d-modern-lighting-lamp-design_23-2151047573.jpg?t=st=1717235304~exp=1717238904~hmac=4172c07ce9660fe157a1322fe165133e62aa560b5299ad377beef69c558cfc2c&w=1380",
-    "https://img.freepik.com/premium-photo/process-production-manufacture-wooden-furniture-furniture-factory-worker-carpenter-man-overalls-processes-wood-special-equipment_154092-13743.jpg",
-    "https://img.freepik.com/free-photo/portrait-young-worker-large-metalworking-plant_146671-19574.jpg?t=st=1717235424~exp=1717239024~hmac=987f16e9b0561546a8c46b5dc70a4a2afa839b74694433471d4f01b15a19c222&w=996",
+   '../public/image/home2.jpg',
+   '../public/image/home3.jpg',
     "../public/image/home.jpg",
   ];
 
@@ -93,7 +92,7 @@ function App() {
     const interval = setInterval(() => {
       currentImageIndex = (currentImageIndex + 1) % images.length;
       sec1Ref.current.style.backgroundImage = `linear-gradient(to right, rgba(3, 3, 28, 0.9), rgba(66, 66, 66, 0.434), rgba(22, 19, 18, 0.151)), url(${images[currentImageIndex]})`;
-    }, 5000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
