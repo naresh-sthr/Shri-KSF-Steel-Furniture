@@ -91,8 +91,7 @@ p {
 }
 
 
-#sec1 {
-  background-image: linear-gradient(to right, rgba(3, 3, 28, 0.9), rgba(66, 66, 66, 0.434), rgba(22, 19, 18, 0.151)), url("../public/image/home.jpg");
+#sec1 {  
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;

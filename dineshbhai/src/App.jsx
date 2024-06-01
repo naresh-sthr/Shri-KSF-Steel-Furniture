@@ -1,6 +1,6 @@
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ScrollToTopButton from "./component/ScrollToTopButton";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Usercontext from "./context/usecontext";
@@ -71,12 +71,32 @@ function App() {
 
   const handleNavLinkClick = () => {
     // Navbar ko band karne ke liye
-    const navbarToggle = document.querySelector('.navbar-toggler');
-    if (navbarToggle && !navbarToggle.classList.contains('collapsed')) {
+    const navbarToggle = document.querySelector(".navbar-toggler");
+    if (navbarToggle && !navbarToggle.classList.contains("collapsed")) {
       navbarToggle.click();
     }
     window.scrollTo(0, 0);
   };
+
+  const images = [
+    "https://img.freepik.com/free-photo/3d-modern-lighting-lamp-design_23-2151047573.jpg?t=st=1717235304~exp=1717238904~hmac=4172c07ce9660fe157a1322fe165133e62aa560b5299ad377beef69c558cfc2c&w=1380",
+    "https://img.freepik.com/premium-photo/process-production-manufacture-wooden-furniture-furniture-factory-worker-carpenter-man-overalls-processes-wood-special-equipment_154092-13743.jpg",
+    "https://img.freepik.com/free-photo/portrait-young-worker-large-metalworking-plant_146671-19574.jpg?t=st=1717235424~exp=1717239024~hmac=987f16e9b0561546a8c46b5dc70a4a2afa839b74694433471d4f01b15a19c222&w=996",
+    "../public/image/home.jpg",
+  ];
+
+  const sec1Ref = useRef(null);
+
+  useEffect(() => {
+    let currentImageIndex = 0;
+
+    const interval = setInterval(() => {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      sec1Ref.current.style.backgroundImage = `linear-gradient(to right, rgba(3, 3, 28, 0.9), rgba(66, 66, 66, 0.434), rgba(22, 19, 18, 0.151)), url(${images[currentImageIndex]})`;
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -98,7 +118,7 @@ function App() {
       <Calllogo />
       <ScrollToTopButton />
       <main>
-        <section id="sec1">
+        <section id="sec1" ref={sec1Ref}>
           <div className="d-flex align-items-center part1 mt-5 ">
             <div className="d-flex flex-column w-sm-50 w-100 ps-1 ps-sm-5  ">
               <h1 className="heading mb-3 mt-2 fw-bold text-warning">
@@ -150,11 +170,7 @@ function App() {
             </p>
             <div className="row col-sm-12 gap-2 d-flex align-items-center justify-content-center ">
               {firstFivePhotos.map((photo) => (
-                <div
-                  id=""
-                  className="col-sm-2 col-10 h-50 px-1"
-                  key={photo.id}
-                >
+                <div id="" className="col-sm-2 col-10 h-50 px-1" key={photo.id}>
                   <div style={{ height: "auto" }} className="mt-4" id="card1">
                     <p
                       style={{ color: "chocolate" }}
@@ -206,7 +222,11 @@ function App() {
               ))}
               <div className="text-center p-0">
                 <button className="p-1 mt-5 text-light btn">
-                  <Link to="/product" className="text-light" onClick={{ handleNavLinkClick }} >
+                  <Link
+                    to="/product"
+                    className="text-light"
+                    onClick={{ handleNavLinkClick }}
+                  >
                     More product
                   </Link>
                 </button>
@@ -252,11 +272,8 @@ function App() {
                   <span>
                     <b>Address : </b>
                   </span>{" "}
-                  <mark>
-                    Shree Kheteshwar Steel Furniture
-                  </mark>{" "}
-                  Jawal Post offices ke pass, Sirohi - Jawal Rd, Jawal,
-                  Rajasthan 307801{" "}
+                  <mark>Shree Kheteshwar Steel Furniture</mark> Jawal Post
+                  offices ke pass, Sirohi - Jawal Rd, Jawal, Rajasthan 307801{" "}
                 </p>
               </div>
               <div className="col-xl-7 col-sm-8 col-md-11 ">
@@ -300,11 +317,13 @@ function App() {
                               Select a State
                             </option>
                             <option value="">-- Select --</option>
-                            {stateDistrictsMap.states.map((stateData, index) => (
-                              <option key={index} value={stateData.state}>
-                                {stateData.state}
-                              </option>
-                            ))}
+                            {stateDistrictsMap.states.map(
+                              (stateData, index) => (
+                                <option key={index} value={stateData.state}>
+                                  {stateData.state}
+                                </option>
+                              )
+                            )}
                           </select>
                         </MDBCol>
                         <MDBCol md={6} className="mb-4  ">
@@ -348,7 +367,7 @@ function App() {
                           />
                         </MDBCol>
                       </MDBRow>
-                      <div className="mt-4" >
+                      <div className="mt-4">
                         <button className="contact-btn" size="md">
                           Submit
                         </button>
